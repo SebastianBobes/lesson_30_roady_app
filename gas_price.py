@@ -4,10 +4,12 @@ from bs4 import BeautifulSoup
 
 class Gas:
 
-    def __init__(self, path = "config.json"):
-        with open(path , 'r') as f:
-            config = json.loads(f.read())
-            self.dict_prices = self.get_html_for_gas(config.get("gas_url"))
+    def __init__(self,config:dict, fuel_type:str = 'benzina'):
+            if fuel_type == 'benzina':
+                url = config.get("gas_url")
+            else:
+                url = config.get("diesel_url")
+            self.dict_prices = self.get_html_for_gas(url)
             self.avg_price = self.calculate_average()
 
     def calculate_average(self):
@@ -35,5 +37,8 @@ class Gas:
             print(f"Exeption on getting gas prices {e}")
 
 if __name__ == '__main__':
+    path = 'config.json'
+    with open(path, 'r') as f:
+        config = json.loads(f.read())
     gas = Gas()
     print(gas.avg_price)
