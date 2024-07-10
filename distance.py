@@ -25,10 +25,6 @@ class Distance():
                 if "km" in distance.text.lower():
                     return distance.text
             print()
-
-
-
-
         except Exception as e:
             print(f"Exeption on getting gas distances {e}")
 
@@ -37,7 +33,11 @@ if __name__ == '__main__':
     path = 'config.json'
     with open(path, 'r') as f:
         config = json.loads(f.read())
-    dist = Distance("Bucuresti" ,"Iasi")
-    print(dist.km)
-    dist2 = Distance("Oradea", "Sibiu")
-    print(dist2.km)
+    # dist = Distance("Bucuresti" ,"Iasi")
+    # print(dist.km)
+    # dist2 = Distance("Oradea", "Sibiu")
+    # print(dist2.km)
+
+        dist2 = Distance("Oradeadas", "Sibiu")
+        print(dist2.km)
+        print()
