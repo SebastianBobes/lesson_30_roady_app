@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>../../Desktop/imagine_roady_app.png</file>
+    <file>imagine_roady_app3.png</file>
+  </qresource>
+</RCC>

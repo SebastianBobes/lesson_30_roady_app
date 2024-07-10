@@ -40,5 +40,8 @@ if __name__ == '__main__':
     path = 'config.json'
     with open(path, 'r') as f:
         config = json.loads(f.read())
-    gas = Gas()
+    gas = Gas(config)
+    gas2 = Gas(config=config, fuel_type='motorina')
+    print(gas2.avg_price)
+    print('aaaaa')
     print(gas.avg_price)
